@@ -1,5 +1,6 @@
 package com.example.tetrisgame
 
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.GestureDetector
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         supportActionBar?.hide()
 
         ///////////////////////////////////////////////////////////////////////////////////////
