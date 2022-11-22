@@ -3,6 +3,13 @@ package com.example.tetrisgame
 class MoveRight {
     companion object {
         fun moveRight() {
+
+            // GHOST
+            TetrominoGhost.searhContact()
+            TetrominoGhost.setGhost()
+            TetrominoGhost.removeGhost()
+            TetrominoGhost.insertGhost()
+
             // todo if possible
             Tetromino.tetromino_Ypos[0] += 1
             Tetromino.tetromino_Ypos[1] += 1

@@ -2,26 +2,31 @@ package com.example.tetrisgame
 
 class MoveLeft {
     companion object {
-
         fun moveLeft() {
-            if (isMovableLeft()) {
-                Tetromino.tetromino_Ypos[0] -= 1
-                Tetromino.tetromino_Ypos[1] -= 1
-                Tetromino.tetromino_Ypos[2] -= 1
-                Tetromino.tetromino_Ypos[3] -= 1
 
-                // remove old position
-                Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] + 1] = 1111
-                Level.Z[Tetromino.tetromino_Xpos[1]][Tetromino.tetromino_Ypos[1] + 1] = 1111
-                Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] + 1] = 1111
-                Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] + 1] = 1111
+            // GHOST
+            TetrominoGhost.searhContact()
+            TetrominoGhost.setGhost()
+            TetrominoGhost.removeGhost()
+            TetrominoGhost.insertGhost()
 
-                // insert new position
-                Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0]] = 0
-                Level.Z[Tetromino.tetromino_Xpos[1]][Tetromino.tetromino_Ypos[1]] = 0
-                Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2]] = 0
-                Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3]] = 0
-            }
+            Tetromino.tetromino_Ypos[0] -= 1
+            Tetromino.tetromino_Ypos[1] -= 1
+            Tetromino.tetromino_Ypos[2] -= 1
+            Tetromino.tetromino_Ypos[3] -= 1
+
+            // remove old position
+            Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] + 1] = 1111
+            Level.Z[Tetromino.tetromino_Xpos[1]][Tetromino.tetromino_Ypos[1] + 1] = 1111
+            Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] + 1] = 1111
+            Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] + 1] = 1111
+
+            // insert new position
+            Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0]] = 0
+            Level.Z[Tetromino.tetromino_Xpos[1]][Tetromino.tetromino_Ypos[1]] = 0
+            Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2]] = 0
+            Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3]] = 0
+
         }
 
         // if there obsticle (wall or piece) then cant move left
@@ -69,7 +74,7 @@ class MoveLeft {
                             //[0] 1  2
                             // . [3] .
                             // .  .  .
-                            if (Tetromino.tetromino_Ypos[0]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[0] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] - 1] == 0
                             )
@@ -79,7 +84,7 @@ class MoveLeft {
                             // . [0]  .
                             //[3] 1  .
                             // . [2]  .
-                            if (Tetromino.tetromino_Ypos[3]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[3] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] - 1] == 0
@@ -90,7 +95,7 @@ class MoveLeft {
                             // . [3]  .
                             //[2] 1  0
                             // .  .  .
-                            if (Tetromino.tetromino_Ypos[2]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[2] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] - 1] == 0
                             )
@@ -100,7 +105,7 @@ class MoveLeft {
                             // . [2] .
                             // .  1  3
                             // . [0] .
-                            if (Tetromino.tetromino_Ypos[0]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[0] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] == 0
                             )
@@ -114,7 +119,7 @@ class MoveLeft {
                             //[0] 1  2
                             // .  . [3]
                             // .  .  .
-                            if (Tetromino.tetromino_Ypos[0]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[0] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] - 1] == 0
                             )
@@ -124,7 +129,7 @@ class MoveLeft {
                             // . [0]  .
                             // . [1]  .
                             //[3] 2   .
-                            if (Tetromino.tetromino_Ypos[3]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[3] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[1]][Tetromino.tetromino_Ypos[1] - 1] == 0
@@ -135,7 +140,7 @@ class MoveLeft {
                             //[3] .  .
                             //[2] 1  0
                             // .  .  .
-                            if (Tetromino.tetromino_Ypos[2]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[2] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] - 1] == 0
                             )
@@ -145,7 +150,7 @@ class MoveLeft {
                             //[2] 3  .
                             //[1] .  .
                             //[0] .  .
-                            if (Tetromino.tetromino_Ypos[0]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[0] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[1]][Tetromino.tetromino_Ypos[1] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] - 1] == 0
@@ -160,7 +165,7 @@ class MoveLeft {
                             //[0] 1  2
                             //[3] .  .
                             // .  .  .
-                            if (Tetromino.tetromino_Ypos[0]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[0] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] - 1] == 0
                             )
@@ -170,7 +175,7 @@ class MoveLeft {
                             //[3] 0  .
                             // . [1] .
                             // . [2] .
-                            if (Tetromino.tetromino_Ypos[3]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[3] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[1]][Tetromino.tetromino_Ypos[1] - 1] == 0
@@ -181,7 +186,7 @@ class MoveLeft {
                             // .  . [3]
                             //[2] 1  0
                             // .  .  .
-                            if (Tetromino.tetromino_Ypos[2]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[2] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] - 1] == 0
                             )
@@ -191,7 +196,7 @@ class MoveLeft {
                             // [2] .  .
                             // [1] .  .
                             // [0] 3  .
-                            if (Tetromino.tetromino_Ypos[0]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[0] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[1]][Tetromino.tetromino_Ypos[1] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] - 1] == 0
@@ -206,7 +211,7 @@ class MoveLeft {
                             // . [0] 1
                             //[2] 3  .
                             // .  .  .
-                            if (Tetromino.tetromino_Ypos[2]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[2] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] - 1] == 0
                             )
@@ -216,7 +221,7 @@ class MoveLeft {
                             //[2] .  .
                             //[3] 0  .
                             // . [1] .
-                            if (Tetromino.tetromino_Ypos[2]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[2] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[1]][Tetromino.tetromino_Ypos[1] - 1] == 0
@@ -231,7 +236,7 @@ class MoveLeft {
                             //[0] 1  .
                             // . [2] 3
                             // .  .  .
-                            if (Tetromino.tetromino_Ypos[0]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[0] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] - 1] == 0
                             )
@@ -241,7 +246,7 @@ class MoveLeft {
                             // . [0] .
                             //[2] 1  .
                             //[3] .  .
-                            if (Tetromino.tetromino_Ypos[2]-1 < 0 ||
+                            if (Tetromino.tetromino_Ypos[2] - 1 < 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] - 1] == 0 ||
                                 Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] == 0

@@ -3,6 +3,13 @@ package com.example.tetrisgame
 class Rotate {
     companion object {
         fun doRotate() {
+
+            // GHOST
+            TetrominoGhost.searhContact()
+            TetrominoGhost.setGhost()
+            TetrominoGhost.removeGhost()
+            TetrominoGhost.insertGhost()
+
             when (Tetromino.actualShape) {
                 "I" -> {
                     when (Tetromino.shapeDirection) {

@@ -2,6 +2,84 @@ package com.example.tetrisgame
 
 class Level {
     companion object {
+        // todo put this pieces into new classes
+
+        // non variable
+        val next2X = arrayOf(
+            arrayOf(850f, 900f, 950f),
+            arrayOf(850f, 900f, 950f),
+            arrayOf(850f, 900f, 950f),
+            arrayOf(850f, 900f, 950f)
+        )
+
+        // non variable
+        val next3X = arrayOf(
+            arrayOf(850f, 900f, 950f),
+            arrayOf(850f, 900f, 950f),
+            arrayOf(850f, 900f, 950f),
+            arrayOf(850f, 900f, 950f)
+        )
+
+        // non variable
+        val next4X = arrayOf(
+            arrayOf(850f, 900f, 950f),
+            arrayOf(850f, 900f, 950f),
+            arrayOf(850f, 900f, 950f),
+            arrayOf(850f, 900f, 950f)
+        )
+
+        // non variable
+        val next2Y = arrayOf(
+            arrayOf(800f, 800f, 800f),
+            arrayOf(850f, 850f, 850f),
+            arrayOf(900f, 900f, 900f),
+            arrayOf(950f, 950f, 950f)
+        )
+
+        // non variable
+        val next3Y = arrayOf(
+            arrayOf(1050f, 1050f, 1050f),
+            arrayOf(1100f, 1100f, 1100f),
+            arrayOf(1150f, 1150f, 1150f),
+            arrayOf(1200f, 1200f, 1200f)
+        )
+
+        // non variable
+        val next4Y = arrayOf(
+            arrayOf(1300f, 1300f, 1300f),
+            arrayOf(1350f, 1350f, 1350f),
+            arrayOf(1400f, 1400f, 1400f),
+            arrayOf(1450f, 1450f, 1450f)
+        )
+
+        // variable
+        var next2Z = arrayOf(
+            arrayOf(1111f, 1111f, 1111f),
+            arrayOf(1111f, 1111f, 1111f),
+            arrayOf(1111f, 1111f, 1111f),
+            arrayOf(1111f, 1111f, 1111f)
+        )
+
+        // variable
+        var next3Z = arrayOf(
+            arrayOf(1111f, 1111f, 1111f),
+            arrayOf(1111f, 1111f, 1111f),
+            arrayOf(1111f, 1111f, 1111f),
+            arrayOf(1111f, 1111f, 1111f)
+        )
+
+        // variable
+        var next4Z = arrayOf(
+            arrayOf(1111f, 1111f, 1111f),
+            arrayOf(1111f, 1111f, 1111f),
+            arrayOf(1111f, 1111f, 1111f),
+            arrayOf(1111f, 1111f, 1111f)
+        )
+
+        var score = 0
+        var best = 0
+        var level = 1
+
         // NON VARIABLES X coordinates - for drawing
         // first two level is hidden
         val X = arrayOf(
@@ -85,6 +163,14 @@ class Level {
 
         // reset level
         fun reset() {
+            level = 1
+            score = 0
+            Tetromino.speed = 500
+
+            Tetromino.next2Shape = (1..7).random()
+            Tetromino.next3Shape = (1..7).random()
+            Tetromino.next4Shape = (1..7).random()
+
             for (i in 0..21) {
                 for (j in 0..9) {
                     Z[i][j] = 1111
@@ -106,7 +192,12 @@ class Level {
             for ((index, i) in Z.withIndex()) {
                 if ((i[0] + i[1] + i[2] + i[3] + i[4] + i[5] + i[6] + i[7] + i[8] + i[9]) == 0) {
                     removeRow(index)
-                    Tetromino.speed-=10
+                    score += 1
+                    if (score % 10 == 0) {
+                        level++
+                        Tetromino.speed -= 50
+                    }
+
                 }
             }
         }

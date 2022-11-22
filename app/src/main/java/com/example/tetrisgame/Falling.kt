@@ -2,8 +2,13 @@ package com.example.tetrisgame
 
 class Falling {
     companion object {
-
         fun fallingStep() {
+
+            TetrominoGhost.searhContact()
+            TetrominoGhost.setGhost()
+            TetrominoGhost.removeGhost()
+            TetrominoGhost.insertGhost()
+
             Tetromino.tetromino_Xpos[0] += 1
             Tetromino.tetromino_Xpos[1] += 1
             Tetromino.tetromino_Xpos[2] += 1

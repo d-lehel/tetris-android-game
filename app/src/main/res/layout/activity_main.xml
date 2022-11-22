@@ -9,91 +9,110 @@
 
     <com.example.tetrisgame.CanvasView
         android:id="@+id/canvas"
-        android:layout_width="303dp"
-        android:layout_height="606dp"
-        android:layout_marginStart="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="609dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="310dp"
+        android:alpha="0.5"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Best"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/canvas"
+        app:layout_constraintTop_toTopOf="@+id/canvas" />
+
+    <TextView
+        android:id="@+id/l"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:alpha="0.5"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Score"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/s"
+        app:layout_constraintTop_toBottomOf="@+id/s" />
+
+    <TextView
+        android:id="@+id/score3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:alpha="0.5"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Level"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/l"
+        app:layout_constraintTop_toBottomOf="@+id/l" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:alpha="0.5"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Next"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/l"
+        app:layout_constraintTop_toBottomOf="@+id/score3" />
+
     <ImageButton
         android:id="@+id/button_left"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="20dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="25dp"
+        android:alpha="0.35"
+        android:background="#00000000"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/canvas"
-        app:srcCompat="?android:attr/listChoiceIndicatorSingle" />
+        app:srcCompat="@drawable/left" />
+
+    <ImageButton
+        android:id="@+id/button_right"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:alpha="0.35"
+        android:background="#000000"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/button_fast_down"
+        app:layout_constraintStart_toEndOf="@+id/button_fast_down"
+        app:srcCompat="@drawable/right" />
 
     <ImageButton
         android:id="@+id/button_rotate"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginEnd="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/button_fast_down"
-        app:layout_constraintTop_toTopOf="@+id/button_left"
-        app:srcCompat="?android:attr/listChoiceIndicatorSingle" />
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="35dp"
+        android:adjustViewBounds="false"
+        android:alpha="0.35"
+        android:background="#000000"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toEndOf="@+id/button_right"
+        app:layout_constraintTop_toBottomOf="@+id/canvas"
+        app:srcCompat="@drawable/rotate" />
 
     <ImageButton
         android:id="@+id/button_fast_down"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button_left"
-        app:srcCompat="?android:attr/listChoiceIndicatorSingle" />
-
-    <ImageButton
-        android:id="@+id/button_right"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="25dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:alpha="0.35"
+        android:background="#000000"
+        android:scaleType="centerCrop"
         app:layout_constraintStart_toEndOf="@+id/button_left"
-        app:layout_constraintTop_toTopOf="@+id/button_left"
-        app:srcCompat="?android:attr/listChoiceIndicatorSingle" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="5dp"
-        android:text="move left"
-        android:textColor="#22FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_left" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="4dp"
-        android:text="move right"
-        android:textColor="#22FFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/button_left" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="4dp"
-        android:text="rotate"
-        android:textColor="#22FFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/button_left" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="4dp"
-        android:text="fast down"
-        android:textColor="#22FFFFFF"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/button_left" />
+        app:layout_constraintTop_toBottomOf="@+id/button_left"
+        app:srcCompat="@drawable/down" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
