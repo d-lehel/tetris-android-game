@@ -1,3 +1,9 @@
+# version 3.0 update
+  + tetromino colors
+  + tetromino drop shadow
+
+[tetris_V3_demo.webm](https://user-images.githubusercontent.com/75861915/203865285-9534863a-4fbf-453b-98d5-d69b47cb3875.webm)
+
 # version 2.0 update
   + next 3 item preview
   + score, best score and level
