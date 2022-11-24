@@ -3,13 +3,6 @@ package com.example.tetrisgame
 class Rotate {
     companion object {
         fun doRotate() {
-
-            // GHOST
-            TetrominoGhost.searhContact()
-            TetrominoGhost.setGhost()
-            TetrominoGhost.removeGhost()
-            TetrominoGhost.insertGhost()
-
             when (Tetromino.actualShape) {
                 "I" -> {
                     when (Tetromino.shapeDirection) {
@@ -302,6 +295,9 @@ class Rotate {
                     }
                 }
             }
+            // GHOST
+            // set ghost
+            TetrominoGhost.setGhost()
         }
 
         ////////////////////////////////////////////////////////
@@ -322,9 +318,9 @@ class Rotate {
                                 Tetromino.tetromino_Xpos[1] + 1 > 21 ||
                                 Tetromino.tetromino_Xpos[2] + 2 > 21 ||
                                 Tetromino.tetromino_Xpos[3] + 3 > 21 ||
-                                Level.Z[Tetromino.tetromino_Xpos[1] + 1][Tetromino.tetromino_Ypos[1]] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[2] + 2][Tetromino.tetromino_Ypos[2] - 1] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[3] + 3][Tetromino.tetromino_Ypos[3] - 2] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[1] + 1][Tetromino.tetromino_Ypos[1]] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[2] + 2][Tetromino.tetromino_Ypos[2] - 1] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[3] + 3][Tetromino.tetromino_Ypos[3] - 2] > 1
                             )
                                 return false
                         }
@@ -338,9 +334,9 @@ class Rotate {
                                 Tetromino.tetromino_Ypos[0] - 1 < 0 ||
                                 Tetromino.tetromino_Ypos[2] + 1 > 9 ||
                                 Tetromino.tetromino_Ypos[3] + 2 > 9 ||
-                                Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[2] - 2][Tetromino.tetromino_Ypos[2] + 1] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[3] - 3][Tetromino.tetromino_Ypos[3] + 2] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[2] - 2][Tetromino.tetromino_Ypos[2] + 1] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[3] - 3][Tetromino.tetromino_Ypos[3] + 2] > 1
                             )
                                 return false
                         }
@@ -358,8 +354,8 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Xpos[2] + 2 > 21 ||
-                                Level.Z[Tetromino.tetromino_Xpos[2] + 2][Tetromino.tetromino_Ypos[2] - 1] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] - 1] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[2] + 2][Tetromino.tetromino_Ypos[2] - 1] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] - 1] > 1
                             )
                                 return false
 
@@ -370,7 +366,7 @@ class Rotate {
                             // .  2  .    =>    .  .  . righ wall check
                             if (
                                 Tetromino.tetromino_Ypos[0] + 1 > 9 ||
-                                Level.Z[Tetromino.tetromino_Xpos[0] + 1][Tetromino.tetromino_Ypos[0] + 1] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[0] + 1][Tetromino.tetromino_Ypos[0] + 1] > 1
                             ) return false
                         }
                         3 -> {
@@ -380,7 +376,7 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Xpos[0] + 1 > 21 ||
-                                Level.Z[Tetromino.tetromino_Xpos[0] + 1][Tetromino.tetromino_Ypos[0] - 1] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[0] + 1][Tetromino.tetromino_Ypos[0] - 1] > 1
 
                             ) return false
 
@@ -393,8 +389,8 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Ypos[0] - 1 < 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[0] - 2][Tetromino.tetromino_Ypos[0] - 1] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] + 1] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[0] - 2][Tetromino.tetromino_Ypos[0] - 1] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] + 1] > 1
                             ) return false
                         }
                     }
@@ -408,9 +404,9 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Xpos[3] + 1 > 21 ||
-                                Level.Z[Tetromino.tetromino_Xpos[1] + 1][Tetromino.tetromino_Ypos[1]] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[2] + 2][Tetromino.tetromino_Ypos[2] - 1] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[3] + 1][Tetromino.tetromino_Ypos[3] - 2] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[1] + 1][Tetromino.tetromino_Ypos[1]] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[2] + 2][Tetromino.tetromino_Ypos[2] - 1] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[3] + 1][Tetromino.tetromino_Ypos[3] - 2] > 1
                             ) return false
                         }
                         2 -> {
@@ -420,9 +416,9 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Ypos[0] + 1 > 9 ||
-                                Level.Z[Tetromino.tetromino_Xpos[0] + 1][Tetromino.tetromino_Ypos[0] + 1] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[2] - 1][Tetromino.tetromino_Ypos[2] - 1] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[3] - 2][Tetromino.tetromino_Ypos[3] + 0] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[0] + 1][Tetromino.tetromino_Ypos[0] + 1] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[2] - 1][Tetromino.tetromino_Ypos[2] - 1] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[3] - 2][Tetromino.tetromino_Ypos[3] + 0] > 1
                             ) return false
                         }
                         3 -> {
@@ -432,8 +428,8 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Xpos[0] + 1 > 21 ||
-                                Level.Z[Tetromino.tetromino_Xpos[0] + 1][Tetromino.tetromino_Ypos[0] - 2] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] + 1] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[0] + 1][Tetromino.tetromino_Ypos[0] - 2] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] + 1] > 1
                             ) return false
                         }
                         4 -> {
@@ -443,8 +439,8 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Ypos[2] + 2 > 9 ||
-                                Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] + 2] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[3] + 1][Tetromino.tetromino_Ypos[3] + 1] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] + 2] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[3] + 1][Tetromino.tetromino_Ypos[3] + 1] > 1
                             ) return false
                         }
                     }
@@ -458,8 +454,8 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Xpos[2] + 2 > 21 ||
-                                Level.Z[Tetromino.tetromino_Xpos[1] + 1][Tetromino.tetromino_Ypos[1]] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[2] + 2][Tetromino.tetromino_Ypos[2] - 1] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[1] + 1][Tetromino.tetromino_Ypos[1]] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[2] + 2][Tetromino.tetromino_Ypos[2] - 1] > 1
                             ) return false
                         }
                         2 -> {
@@ -469,9 +465,9 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Ypos[0] + 1 > 9 ||
-                                Level.Z[Tetromino.tetromino_Xpos[0] + 1][Tetromino.tetromino_Ypos[0] + 1] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[2] - 1][Tetromino.tetromino_Ypos[2] - 1] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] + 2] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[0] + 1][Tetromino.tetromino_Ypos[0] + 1] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[2] - 1][Tetromino.tetromino_Ypos[2] - 1] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3] + 2] > 1
                             ) return false
                         }
                         3 -> {
@@ -481,9 +477,9 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Xpos[0] + 1 > 21 ||
-                                Level.Z[Tetromino.tetromino_Xpos[0] + 1][Tetromino.tetromino_Ypos[0] - 2] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[2] - 1][Tetromino.tetromino_Ypos[2]] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[3] + 2][Tetromino.tetromino_Ypos[3] - 1] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[0] + 1][Tetromino.tetromino_Ypos[0] - 2] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[2] - 1][Tetromino.tetromino_Ypos[2]] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[3] + 2][Tetromino.tetromino_Ypos[3] - 1] > 1
                             ) return false
                         }
                         4 -> {
@@ -493,8 +489,8 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Ypos[2] + 2 > 9 ||
-                                Level.Z[Tetromino.tetromino_Xpos[1] - 1][Tetromino.tetromino_Ypos[1] + 1] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] + 2] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[1] - 1][Tetromino.tetromino_Ypos[1] + 1] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] + 2] > 1
                             ) return false
                         }
                     }
@@ -508,8 +504,8 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Xpos[1] + 2 > 21 ||
-                                Level.Z[Tetromino.tetromino_Xpos[1] + 2][Tetromino.tetromino_Ypos[1] - 1] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[2] - 1][Tetromino.tetromino_Ypos[2]] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[1] + 2][Tetromino.tetromino_Ypos[1] - 1] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[2] - 1][Tetromino.tetromino_Ypos[2]] > 1
                             ) return false
 
                         }
@@ -520,8 +516,8 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Ypos[1] + 1 > 9 ||
-                                Level.Z[Tetromino.tetromino_Xpos[0] - 1][Tetromino.tetromino_Ypos[0]] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[1] - 2][Tetromino.tetromino_Ypos[1] + 1] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[0] - 1][Tetromino.tetromino_Ypos[0]] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[1] - 2][Tetromino.tetromino_Ypos[1] + 1] > 1
                             ) return false
                         }
                     }
@@ -535,8 +531,8 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Xpos[3] + 1 > 21 ||
-                                Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] - 1] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[3] + 1][Tetromino.tetromino_Ypos[3] - 2] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2] - 1] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[3] + 1][Tetromino.tetromino_Ypos[3] - 2] > 1
                             ) return false
                         }
                         2 -> {
@@ -546,8 +542,8 @@ class Rotate {
 
                             if (
                                 Tetromino.tetromino_Ypos[3] + 2 > 9 ||
-                                Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] == 0 ||
-                                Level.Z[Tetromino.tetromino_Xpos[3] - 1][Tetromino.tetromino_Ypos[3] + 2] == 0
+                                Level.Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0] - 1] > 1 ||
+                                Level.Z[Tetromino.tetromino_Xpos[3] - 1][Tetromino.tetromino_Ypos[3] + 2] > 1
                             ) return false
                         }
                     }

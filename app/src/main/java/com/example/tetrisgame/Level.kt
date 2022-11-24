@@ -54,26 +54,26 @@ class Level {
 
         // variable
         var next2Z = arrayOf(
-            arrayOf(1111f, 1111f, 1111f),
-            arrayOf(1111f, 1111f, 1111f),
-            arrayOf(1111f, 1111f, 1111f),
-            arrayOf(1111f, 1111f, 1111f)
+            arrayOf(0, 0, 0),
+            arrayOf(0, 0, 0),
+            arrayOf(0, 0, 0),
+            arrayOf(0, 0, 0)
         )
 
         // variable
         var next3Z = arrayOf(
-            arrayOf(1111f, 1111f, 1111f),
-            arrayOf(1111f, 1111f, 1111f),
-            arrayOf(1111f, 1111f, 1111f),
-            arrayOf(1111f, 1111f, 1111f)
+            arrayOf(0, 0, 0),
+            arrayOf(0, 0, 0),
+            arrayOf(0, 0, 0),
+            arrayOf(0, 0, 0)
         )
 
         // variable
         var next4Z = arrayOf(
-            arrayOf(1111f, 1111f, 1111f),
-            arrayOf(1111f, 1111f, 1111f),
-            arrayOf(1111f, 1111f, 1111f),
-            arrayOf(1111f, 1111f, 1111f)
+            arrayOf(0, 0, 0),
+            arrayOf(0, 0, 0),
+            arrayOf(0, 0, 0),
+            arrayOf(0, 0, 0)
         )
 
         var score = 0
@@ -137,28 +137,28 @@ class Level {
         // VARIABLE Z - if(value == 1111) draw outside the canvas, else inside
         // first two level is hidden
         var Z = mutableListOf(
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111),
-            arrayOf(1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111, 1111)
+            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 4, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 5, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 6, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 7, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 8, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+            arrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
         )
 
         // reset level
@@ -171,9 +171,10 @@ class Level {
             Tetromino.next3Shape = (1..7).random()
             Tetromino.next4Shape = (1..7).random()
 
+            // level clear
             for (i in 0..21) {
                 for (j in 0..9) {
-                    Z[i][j] = 1111
+                    Z[i][j] = 0
                 }
             }
         }
@@ -190,7 +191,17 @@ class Level {
 
         fun checkRows() {
             for ((index, i) in Z.withIndex()) {
-                if ((i[0] + i[1] + i[2] + i[3] + i[4] + i[5] + i[6] + i[7] + i[8] + i[9]) == 0) {
+                if (i[0] > 1 &&
+                    i[1] > 1 &&
+                    i[2] > 1 &&
+                    i[3] > 1 &&
+                    i[4] > 1 &&
+                    i[5] > 1 &&
+                    i[6] > 1 &&
+                    i[7] > 1 &&
+                    i[8] > 1 &&
+                    i[9] > 1
+                ) {
                     removeRow(index)
                     score += 1
                     if (score % 10 == 0) {
@@ -205,7 +216,7 @@ class Level {
         fun removeRow(index: Int) {
             // clean that row
             for (i in 0..9)
-                Z[index][i] = 1111
+                Z[index][i] = 0
             // correct remained rows
             for (i in index downTo 2)
                 Z[i] = Z[i - 1].also { Z[i - 1] = Z[i] } // swap
@@ -213,17 +224,17 @@ class Level {
 
         fun insertNewPosition() {
 
+            Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0]] = Tetromino.colorCode
+            Z[Tetromino.tetromino_Xpos[1]][Tetromino.tetromino_Ypos[1]] = Tetromino.colorCode
+            Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2]] = Tetromino.colorCode
+            Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3]] = Tetromino.colorCode
+        }
+
+        fun removeOldPosition() {
             Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0]] = 0
             Z[Tetromino.tetromino_Xpos[1]][Tetromino.tetromino_Ypos[1]] = 0
             Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2]] = 0
             Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3]] = 0
-        }
-
-        fun removeOldPosition() {
-            Z[Tetromino.tetromino_Xpos[0]][Tetromino.tetromino_Ypos[0]] = 1111
-            Z[Tetromino.tetromino_Xpos[1]][Tetromino.tetromino_Ypos[1]] = 1111
-            Z[Tetromino.tetromino_Xpos[2]][Tetromino.tetromino_Ypos[2]] = 1111
-            Z[Tetromino.tetromino_Xpos[3]][Tetromino.tetromino_Ypos[3]] = 1111
         }
     }
 }

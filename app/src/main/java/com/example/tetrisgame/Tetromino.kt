@@ -13,6 +13,7 @@ class Tetromino {
         var next4Shape = 0;
         var shapeDirection = 0;
         var speed: Long = 500;
+        var colorCode: Int = 0
 
         fun newPiece() {
             nextShape = next2Shape
@@ -41,6 +42,7 @@ class Tetromino {
             when (nextShape) {
                 1 -> {
                     actualShape = "I"
+                    colorCode = 2
                     shapeDirection = 1
                     tetromino_Xpos = arrayOf(0, 0, 0, 0)
                     tetromino_Ypos = arrayOf(3, 4, 5, 6)
@@ -50,6 +52,7 @@ class Tetromino {
                 }
                 2 -> {
                     actualShape = "O"
+                    colorCode = 3
                     shapeDirection = 1
                     tetromino_Xpos = arrayOf(0, 0, 1, 1)
                     tetromino_Ypos = arrayOf(4, 5, 4, 5)
@@ -59,6 +62,7 @@ class Tetromino {
                 }
                 3 -> {
                     actualShape = "T"
+                    colorCode = 4
                     shapeDirection = 1
                     tetromino_Xpos = arrayOf(0, 0, 0, 1)
                     tetromino_Ypos = arrayOf(3, 4, 5, 4)
@@ -68,6 +72,7 @@ class Tetromino {
                 }
                 4 -> {
                     actualShape = "J"
+                    colorCode = 5
                     shapeDirection = 1
                     tetromino_Xpos = arrayOf(0, 0, 0, 1)
                     tetromino_Ypos = arrayOf(3, 4, 5, 5)
@@ -78,6 +83,7 @@ class Tetromino {
                 5 -> {
                     actualShape = "L"
                     shapeDirection = 1
+                    colorCode = 6
                     tetromino_Xpos = arrayOf(0, 0, 0, 1)
                     tetromino_Ypos = arrayOf(3, 4, 5, 3)
 
@@ -87,6 +93,7 @@ class Tetromino {
                 6 -> {
                     actualShape = "S"
                     shapeDirection = 1
+                    colorCode = 7
                     tetromino_Xpos = arrayOf(0, 0, 1, 1)
                     tetromino_Ypos = arrayOf(4, 5, 3, 4)
 
@@ -96,6 +103,7 @@ class Tetromino {
                 7 -> {
                     actualShape = "Z"
                     shapeDirection = 1
+                    colorCode = 8
                     tetromino_Xpos = arrayOf(0, 0, 1, 1)
                     tetromino_Ypos = arrayOf(3, 4, 4, 5)
 
@@ -105,56 +113,56 @@ class Tetromino {
             }
         }
 
-        private fun insertNextPiece(nextShape: Int, level: Array<Array<Float>>) {
+        private fun insertNextPiece(nextShape: Int, level: Array<Array<Int>>) {
             when (nextShape) {
                 1 -> { // I
-                    level[0][0] = 0f
-                    level[1][0] = 0f
-                    level[2][0] = 0f
-                    level[3][0] = 0f
+                    level[0][0] = 2
+                    level[1][0] = 2
+                    level[2][0] = 2
+                    level[3][0] = 2
                 }
                 2 -> { // O
-                    level[2][0] = 0f
-                    level[3][0] = 0f
-                    level[2][1] = 0f
-                    level[3][1] = 0f
+                    level[2][0] = 3
+                    level[3][0] = 3
+                    level[2][1] = 3
+                    level[3][1] = 3
                 }
                 3 -> { // T
-                    level[1][0] = 0f
-                    level[2][0] = 0f
-                    level[3][0] = 0f
-                    level[2][1] = 0f
+                    level[1][0] = 4
+                    level[2][0] = 4
+                    level[3][0] = 4
+                    level[2][1] = 4
                 }
                 4 -> { // J
-                    level[1][1] = 0f
-                    level[2][1] = 0f
-                    level[3][1] = 0f
-                    level[3][0] = 0f
+                    level[1][1] = 5
+                    level[2][1] = 5
+                    level[3][1] = 5
+                    level[3][0] = 5
                 }
                 5 -> { // L
-                    level[1][0] = 0f
-                    level[2][0] = 0f
-                    level[3][0] = 0f
-                    level[3][1] = 0f
+                    level[1][0] = 6
+                    level[2][0] = 6
+                    level[3][0] = 6
+                    level[3][1] = 6
                 }
                 6 -> { // S
-                    level[3][0] = 0f
-                    level[3][1] = 0f
-                    level[2][1] = 0f
-                    level[2][2] = 0f
+                    level[3][0] = 7
+                    level[3][1] = 7
+                    level[2][1] = 7
+                    level[2][2] = 7
                 }
                 7 -> { // Z
-                    level[3][1] = 0f
-                    level[3][2] = 0f
-                    level[2][0] = 0f
-                    level[2][1] = 0f
+                    level[3][1] = 8
+                    level[3][2] = 8
+                    level[2][0] = 8
+                    level[2][1] = 8
                 }
             }
         }
-        private fun clearNextPiece(nextShape: Int, level: Array<Array<Float>>){
+        private fun clearNextPiece(nextShape: Int, level: Array<Array<Int>>){
             for (i in 0..3) {
                 for (j in 0..2) {
-                    level[i][j] = 1111f
+                    level[i][j] = 0
                 }
             }
         }

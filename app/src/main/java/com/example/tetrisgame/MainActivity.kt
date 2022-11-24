@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         button_fast_down.setOnClickListener {
-            while (!Falling.willLanding()) {
+            while (!Falling.willLanding(1)) {
                 Falling.fallingStep()
             }
         }
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
             // gamplay infinite
             while (true) {
-                if (Falling.willLanding()) {
+                if (Falling.willLanding(1)) {
                     // check is need to clear rows
                     Level.checkRows()
                     // if landed piece cant entered
