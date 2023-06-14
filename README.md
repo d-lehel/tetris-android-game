@@ -1,17 +1,30 @@
-# version 3.0 update
-  + tetromino colors
-  + tetromino drop shadow
+# Tetris Game (Android Kotlin)
 
-[tetris_V3_demo.webm](https://user-images.githubusercontent.com/75861915/203865285-9534863a-4fbf-453b-98d5-d69b47cb3875.webm)
+This is a classic Tetris game developed for Android using Kotlin programming language. Tetris is a popular puzzle game where players manipulate falling blocks called "tetriminos" to create complete horizontal lines. The objective is to clear as many lines as possible and achieve a high score.
 
-# version 2.0 update
-  + next 3 item preview
-  + score, best score and level
-  + new design
+## Gameplay
 
-[tetris_demoV2.webm](https://user-images.githubusercontent.com/75861915/203315555-43805099-08cc-4899-a53a-e6a10ce86ade.webm) 
+![tetris](https://github.com/d-lehel/tetris-android-game/assets/75861915/5455ad28-7ad8-42cb-917e-897e7e9fb111)
 
-# version 1.0 
-  - basic functionality
+Check out the gameplay in action! The GIF above showcases gameplay of the Tetris game on Android. 
 
-[tetris_demo.webm](https://user-images.githubusercontent.com/75861915/199173018-42aad63a-a86e-4cfe-99d0-672f8cd65ea6.webm)
+## Features
+
+- Classic Tetris mechanics.
+- Touch-based controls.
+- Various levels of difficulty.
+- Score tracking
+- Ghost block shows where the active tetrimino will land.
+- The next three upcoming tetriminos are displayed.
+
+## Technologies Used
+
+- Android SDK: The game is built using Android SDK, which provides the necessary tools and libraries for Android app development.
+- Kotlin: The game logic and user interface are implemented using Kotlin, a modern programming language for Android development.
+- Android Studio: The project is developed and managed in Android Studio, a powerful integrated development environment (IDE) for Android app development.
+
+## How to Play
+
+Download from here and install the game on your Android device.
+- https://github.com/d-lehel/tetris-android-game/blob/main/playable_tetris_V3.apk
+
